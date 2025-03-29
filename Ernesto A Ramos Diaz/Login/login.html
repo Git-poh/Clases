@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Mi Página Web Profesional</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Video de fondo -->
+    <video id="videoFondo" autoplay muted loop>
+        <source src="Video/The_Matrix_Raining_Green_Code_Backdrop_for_OBS_-_Teams,_Zoom_calls_in_4k_-_link_to_45mins_ver_below(1080p).mp4" type="video/mp4">
+        Tu navegador no soporta el formato de video.
+    </video>
+
+    <!-- Encabezado -->
+    <header class="encabezado">
+        <h1 class="titulo" id="tituloLogin">Login</h1>
+    </header>
+
+    <!-- Sección de Login -->
+    <div class="contenedor" id="login">
+        <div class="seccion">
+            <h2 class="titulo-seccion">Iniciar sesión</h2>
+            <form id="formLogin" class="formulario-login">
+                <label for="username" class="etiqueta-form">Nombre de usuario:</label>
+                <input type="text" id="username" class="input-form" required>
+                <label for="password" class="etiqueta-form">Contraseña:</label>
+                <input type="password" id="password" class="input-form" required>
+                <button type="submit" class="boton-form">Iniciar sesión</button>
+            </form>
+            <p class="registro-enlace">¿No tienes cuenta? <a href="registro/registro.html" class="enlace-registro">Regístrate aquí</a></p>
+
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="pie-pagina">
+        <p class="texto-pie">&copy; 2025 Mi Página Web Profesional. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Código JavaScript para validar el formulario de login
+        document.getElementById("formLogin").addEventListener("submit", function(event) {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Validación de usuario (no vacío)
+            if (username.trim() === "") {
+                alert("El nombre de usuario no puede estar vacío.");
+                event.preventDefault(); // Evita el envío del formulario
+                return;
+            }
+
+            // Validación de contraseña (mínimo 6 caracteres)
+            if (password.length < 6) {
+                alert("La contraseña debe tener al menos 6 caracteres.");
+                event.preventDefault(); // Evita el envío del formulario
+                return;
+            }
+        });
+
+        // Efecto de escritura
+        let titulo = document.getElementById('tituloLogin');
+        let texto = titulo.textContent;
+        titulo.textContent = '';
+        let i = 0;
+        
+        function escribirTexto() {
+            if (i < texto.length) {
+                titulo.textContent += texto.charAt(i);
+                i++;
+                setTimeout(escribirTexto, 100); // Tiempo entre cada letra
+            }
+        }
+        
+        setTimeout(escribirTexto, 750); // Comienza a escribir después de medio segundo
+    </script>
+</body>
+</html>

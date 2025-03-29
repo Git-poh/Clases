@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSec Labs | Ethical Hacking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Video de fondo estilo Matrix -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline id="videoFondo">
+            <source src="media/matrix-code.mp4" type="video/mp4">
+            <div class="video-fallback"></div>
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- Encabezado -->
+    <header class="encabezado">
+        <h1 class="titulo">
+            <span class="terminal-prefix">root@cybersec:~#</span> 
+            <span class="typing-text">CyberSec Labs</span>
+            <span class="cursor">|</span>
+        </h1>
+        <div class="terminal-status">
+            <span class="status-indicator"></span>
+            <span class="status-text">CONNECTED</span>
+        </div>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav class="barra-navegacion">
+        <ul class="lista-nav">
+            <li class="item-nav"><a href="Login/login.html" class="enlace-nav"><i class="fas fa-home"></i> Inicio</a></li>
+            <li class="item-nav"><a href="#servicios" class="enlace-nav"><i class="fas fa-shield-alt"></i> Servicios</a></li>
+            <li class="item-nav"><a href="#herramientas" class="enlace-nav"><i class="fas fa-tools"></i> Herramientas</a></li>
+            <li class="item-nav"><a href="#equipo" class="enlace-nav"><i class="fas fa-users"></i> Equipo</a></li>
+            <li class="item-nav"><a href="#contacto" class="enlace-nav"><i class="fas fa-envelope"></i> Contacto</a></li>
+            <li class="item-nav"><a href="login.html" class="enlace-nav"><i class="fas fa-sign-in-alt"></i> Acceso Seguro</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección de Inicio -->
+    <div class="contenedor" id="inicio">
+        <div class="seccion">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-btn red"></span>
+                        <span class="terminal-btn yellow"></span>
+                        <span class="terminal-btn green"></span>
+                    </div>
+                    <span class="terminal-title">root@cybersec:~/welcome.sh</span>
+                </div>
+                <div class="terminal-body">
+                    <p class="terminal-text"><span class="prompt">$</span> Bienvenido a CyberSec Labs</p>
+                    <p class="terminal-text"><span class="prompt">$</span> Iniciando sistema de seguridad...</p>
+                    <p class="terminal-text"><span class="prompt">$</span> Cargando módulos de protección...</p>
+                    <p class="terminal-text"><span class="prompt">$</span> Sistema listo.</p>
+                    <p class="terminal-text"><span class="prompt">$</span> <span class="blink">_</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección Servicios -->
+    <div class="contenedor" id="servicios">
+        <div class="seccion">
+            <h2 class="titulo-seccion">
+                <span class="terminal-prefix">root@cybersec:~#</span> 
+                Nuestros Servicios
+            </h2>
+            <div class="tarjetas">
+                <div class="tarjeta">
+                    <div class="tarjeta-icono">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="titulo-tarjeta">Pentesting</h3>
+                    <p class="texto-tarjeta">Pruebas de intrusión para identificar vulnerabilidades en tus sistemas.</p>
+                    <div class="tarjeta-footer">
+                        <span class="hash-tag">#Seguridad</span>
+                        <span class="hash-tag">#HackingÉtico</span>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <div class="tarjeta-icono">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="titulo-tarjeta">Protección</h3>
+                    <p class="texto-tarjeta">Sistemas avanzados de protección contra ataques cibernéticos.</p>
+                    <div class="tarjeta-footer">
+                        <span class="hash-tag">#Firewalls</span>
+                        <span class="hash-tag">#IDS/IPS</span>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <div class="tarjeta-icono">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3 class="titulo-tarjeta">Forensia Digital</h3>
+                    <p class="texto-tarjeta">Investigación de incidentes de seguridad y recuperación de datos.</p>
+                    <div class="tarjeta-footer">
+                        <span class="hash-tag">#Investigación</span>
+                        <span class="hash-tag">#Evidencia</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección Herramientas -->
+    <div class="contenedor" id="herramientas">
+        <div class="seccion">
+            <h2 class="titulo-seccion">
+                <span class="terminal-prefix">root@cybersec:~#</span> 
+                Nuestras Herramientas
+            </h2>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-btn red"></span>
+                        <span class="terminal-btn yellow"></span>
+                        <span class="terminal-btn green"></span>
+                    </div>
+                    <span class="terminal-title">root@cybersec:~/tools.sh</span>
+                </div>
+                <div class="terminal-body">
+                    <p class="terminal-text"><span class="prompt">$</span> <span class="command">ls -la /tools/</span></p>
+                    <p class="terminal-text">drwxr-xr-x  2 root root 4096 Jan 10 10:00 <span class="dir">metasploit</span></p>
+                    <p class="terminal-text">drwxr-xr-x  2 root root 4096 Jan 10 10:00 <span class="dir">nmap</span></p>
+                    <p class="terminal-text">drwxr-xr-x  2 root root 4096 Jan 10 10:00 <span class="dir">wireshark</span></p>
+                    <p class="terminal-text">drwxr-xr-x  2 root root 4096 Jan 10 10:00 <span class="dir">burp-suite</span></p>
+                    <p class="terminal-text">drwxr-xr-x  2 root root 4096 Jan 10 10:00 <span class="dir">john</span></p>
+                    <p class="terminal-text"><span class="prompt">$</span> <span class="blink">_</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección Equipo -->
+    <div class="contenedor" id="equipo">
+        <div class="seccion">
+            <h2 class="titulo-seccion">
+                <span class="terminal-prefix">root@cybersec:~#</span> 
+                Nuestro Equipo
+            </h2>
+            <div class="equipo-grid">
+                <div class="miembro-equipo">
+                    <div class="avatar-hacker">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3 class="nombre-hacker">Neo</h3>
+                    <p class="rol-hacker">Red Team Lead</p>
+                    <div class="skills-hacker">
+                        <span class="skill-tag">Exploit Dev</span>
+                        <span class="skill-tag">Reverse Eng</span>
+                        <span class="skill-tag">Pentesting</span>
+                    </div>
+                </div>
+                <div class="miembro-equipo">
+                    <div class="avatar-hacker">
+                        <i class="fas fa-user-ninja"></i>
+                    </div>
+                    <h3 class="nombre-hacker">Trinity</h3>
+                    <p class="rol-hacker">Forensic Analyst</p>
+                    <div class="skills-hacker">
+                        <span class="skill-tag">Memory Forensics</span>
+                        <span class="skill-tag">Malware Analysis</span>
+                    </div>
+                </div>
+                <div class="miembro-equipo">
+                    <div class="avatar-hacker">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="nombre-hacker">Morpheus</h3>
+                    <p class="rol-hacker">Blue Team Lead</p>
+                    <div class="skills-hacker">
+                        <span class="skill-tag">SIEM</span>
+                        <span class="skill-tag">Threat Hunting</span>
+                        <span class="skill-tag">Incident Response</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Contacto -->
+    <div class="contenedor" id="contacto">
+        <div class="seccion">
+            <h2 class="titulo-seccion">
+                <span class="terminal-prefix">root@cybersec:~#</span> 
+                Contacto Seguro
+            </h2>
+            <div class="contacto-container">
+                <div class="contacto-info">
+                    <div class="info-item">
+                        <i class="fas fa-key"></i>
+                        <span>PGP Key: 0x1A2B3C4D5E6F7890</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@cybersec-labs.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-server"></i>
+                        <span>Onion Service: cybersecxxxxxxxx.onion</span>
+                    </div>
+                </div>
+                <form id="formulario" class="formulario-contacto">
+                    <div class="form-group">
+                        <label for="nombre" class="etiqueta-form">
+                            <i class="fas fa-user"></i> Nombre:
+                        </label>
+                        <input type="text" id="nombre" class="input-form" required placeholder="Tu alias">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="etiqueta-form">
+                            <i class="fas fa-at"></i> Email:
+                        </label>
+                        <input type="email" id="email" class="input-form" required placeholder="email@protonmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje" class="etiqueta-form">
+                            <i class="fas fa-comment-alt"></i> Mensaje:
+                        </label>
+                        <textarea id="mensaje" class="textarea-form" rows="5" required placeholder="Usa PGP para información sensible"></textarea>
+                    </div>
+                    <button type="submit" class="boton-form">
+                        <i class="fas fa-paper-plane"></i> Enviar Mensaje Encriptado
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="pie-pagina">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">CyberSec Labs</h3>
+                <p class="footer-text">Soluciones avanzadas en ciberseguridad desde 2010.</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Enlaces Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Whitepapers</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> CTF</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Conéctate</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="texto-pie">
+                &copy; 2023 CyberSec Labs | <span id="current-year"></span> 
+                <span class="disclaimer">* Solo para fines educativos y legales</span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Efecto de escritura automática
+        const typingText = document.querySelector('.typing-text');
+        const textToType = "CyberSec Labs";
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < textToType.length) {
+                typingText.textContent += textToType.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            } else {
+                document.querySelector('.cursor').classList.add('blink');
+            }
+        }
+        
+        // Iniciar efecto al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            typeWriter();
+            
+            // Año actual
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Validación del formulario
+            document.getElementById("formulario").addEventListener("submit", function(event) {
+                event.preventDefault();
+                
+                // Validación básica
+                const nombre = document.getElementById("nombre").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const mensaje = document.getElementById("mensaje").value.trim();
+                
+                if (!nombre || !email || !mensaje) {
+                    alert("[ERROR] Todos los campos son requeridos");
+                    return;
+                }
+                
+                // Simular envío
+                const terminal = document.createElement('div');
+                terminal.className = 'terminal-message';
+                terminal.innerHTML = `
+                    <p><span class="prompt">$</span> <span class="command">send_secure_message.sh</span></p>
+                    <p><span class="prompt">$</span> Encriptando mensaje con PGP...</p>
+                    <p><span class="prompt">$</span> Estableciendo conexión segura...</p>
+                    <p><span class="prompt">$</span> Mensaje enviado con éxito!</p>
+                `;
+                
+                document.querySelector('.formulario-contacto').appendChild(terminal);
+                document.getElementById("formulario").reset();
+                
+                // Desaparecer después de 5 segundos
+                setTimeout(() => {
+                    terminal.style.opacity = '0';
+                    setTimeout(() => terminal.remove(), 500);
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>
