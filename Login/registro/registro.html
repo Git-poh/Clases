@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Sistema Hacker</title>
+    <link rel="stylesheet" href="stylesR.css">
+</head>
+<body>
+    <!-- Video de fondo con overlay -->
+    <video id="videoFondo" autoplay muted loop>
+        <source src="Video/The_Matrix_Raining_Green_Code_Backdrop_for_OBS_-_Teams,_Zoom_calls_in_4k_-_link_to_45mins_ver_below(1080p).mp4" type="video/mp4">
+        Tu navegador no soporta el formato de video.
+    </video>
+
+    <!-- Contenido principal con scroll -->
+    <div class="main-content">
+        <header class="encabezado">
+            <h1 class="titulo">REGISTRO</h1>
+        </header>
+        
+        <main class="contenedor">
+            <h2 class="titulo-seccion">CREAR CUENTA</h2>
+            
+            <form class="formulario-registro" id="formRegistro">
+                <!-- Grupo Nombre Completo -->
+                <div class="grupo-formulario">
+                    <label class="etiqueta-form" for="nombre">NOMBRE COMPLETO</label>
+                    <input class="input-form" type="text" id="nombre" name="nombre" required>
+                    <div class="mensaje-error" id="errorNombre"></div>
+                </div>
+                
+                <!-- Grupo Usuario -->
+                <div class="grupo-formulario">
+                    <label class="etiqueta-form" for="usuario">NOMBRE DE USUARIO</label>
+                    <input class="input-form" type="text" id="usuario" name="usuario" required>
+                    <div class="info-campo">(Mínimo 6 caracteres, solo letras, números y _)</div>
+                    <div class="mensaje-error" id="errorUsuario"></div>
+                </div>
+                
+                <!-- Grupo Email -->
+                <div class="grupo-formulario">
+                    <label class="etiqueta-form" for="email">CORREO ELECTRÓNICO</label>
+                    <input class="input-form" type="email" id="email" name="email" required>
+                    <div class="mensaje-error" id="errorEmail"></div>
+                </div>
+                
+                <!-- Grupo Contraseña -->
+                <div class="grupo-formulario">
+                    <label class="etiqueta-form" for="password">CONTRASEÑA</label>
+                    <input class="input-form" type="password" id="password" name="password" required>
+                    <div class="info-campo">(Mínimo 8 caracteres, 1 mayúscula, 1 número y 1 carácter especial)</div>
+                    <div class="mensaje-error" id="errorPassword"></div>
+                </div>
+                
+                <!-- Grupo Confirmar Contraseña -->
+                <div class="grupo-formulario">
+                    <label class="etiqueta-form" for="confirmar-password">CONFIRMAR CONTRASEÑA</label>
+                    <input class="input-form" type="password" id="confirmar-password" name="confirmar-password" required>
+                    <div class="mensaje-error" id="errorConfirmPassword"></div>
+                </div>
+                
+                <!-- Grupo Fecha Nacimiento -->
+                <div class="grupo-formulario">
+                    <label class="etiqueta-form" for="fecha-nacimiento">FECHA DE NACIMIENTO</label>
+                    <input class="input-form" type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+                    <div class="mensaje-error" id="errorFecha"></div>
+                </div>
+                
+                <!-- Grupo País -->
+                <div class="grupo-formulario">
+                    <label class="etiqueta-form" for="pais">PAÍS</label>
+                    <select class="input-form" id="pais" name="pais" required>
+                        <option value="">Selecciona tu país</option>
+                        <option value="MX">México</option>
+                        <option value="US">Estados Unidos</option>
+                        <option value="ES">España</option>
+                        <option value="AR">Argentina</option>
+                        <option value="CO">Colombia</option>
+                    </select>
+                    <div class="mensaje-error" id="errorPais"></div>
+                </div>
+                
+                <!-- Grupo Términos -->
+                <div class="grupo-formulario aceptar-terminos">
+                    <input type="checkbox" id="terminos" name="terminos" required>
+                    <label for="terminos">Acepto los <a href="#" class="enlace-terminos">Términos y Condiciones</a> y la <a href="#" class="enlace-terminos">Política de Privacidad</a></label>
+                    <div class="mensaje-error" id="errorTerminos"></div>
+                </div>
+                
+                <!-- Botón de Registro -->
+                <button type="submit" class="boton-form">REGISTRARSE</button>
+            </form>
+            
+            <div class="enlace-login">
+                ¿Ya tienes una cuenta? <a href="/Login/login.html" class="enlace-registro">Inicia Sesión</a>
+            </div>
+        </main>
+        
+        <footer class="pie-pagina">
+            <p class="texto-pie">Sistema de Seguridad Hacker © 2023 - Todos los derechos reservados</p>
+        </footer>
+    </div>
+
+    <script>
+        // Validación del formulario
+        document.getElementById('formRegistro').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Resetear errores
+            resetErrors();
+            
+            // Validar campos
+            const isValid = validateForm();
+            
+            // Si todo es válido
+            if (isValid) {
+                // Simular envío exitoso
+                showSuccessMessage();
+            }
+        });
+
+        // Funciones de validación
+        function resetErrors() {
+            document.querySelectorAll('.mensaje-error').forEach(el => el.textContent = '');
+            document.querySelectorAll('.input-form').forEach(el => el.style.borderColor = '#00FF00');
+        }
+
+        function validateForm() {
+            let isValid = true;
+            
+            // Validar nombre
+            const nombre = document.getElementById('nombre').value.trim();
+            if (nombre.length < 3) {
+                showError('errorNombre', 'El nombre debe tener al menos 3 caracteres', 'nombre');
+                isValid = false;
+            }
+            
+            // Validar usuario
+            const usuario = document.getElementById('usuario').value.trim();
+            if (usuario.length < 6) {
+                showError('errorUsuario', 'El usuario debe tener al menos 6 caracteres', 'usuario');
+                isValid = false;
+            } else if (!/^[a-zA-Z0-9_]+$/.test(usuario)) {
+                showError('errorUsuario', 'Solo se permiten letras, números y guiones bajos', 'usuario');
+                isValid = false;
+            }
+            
+            // Validar email
+            const email = document.getElementById('email').value.trim();
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showError('errorEmail', 'Ingresa un correo electrónico válido', 'email');
+                isValid = false;
+            }
+            
+            // Validar contraseña
+            const password = document.getElementById('password').value;
+            if (password.length < 8) {
+                showError('errorPassword', 'La contraseña debe tener al menos 8 caracteres', 'password');
+                isValid = false;
+            } else if (!/(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/.test(password)) {
+                showError('errorPassword', 'Debe contener 1 mayúscula, 1 número y 1 carácter especial', 'password');
+                isValid = false;
+            }
+            
+            // Validar confirmación de contraseña
+            const confirmPassword = document.getElementById('confirmar-password').value;
+            if (password !== confirmPassword) {
+                showError('errorConfirmPassword', 'Las contraseñas no coinciden', 'confirmar-password');
+                isValid = false;
+            }
+            
+            // Validar fecha de nacimiento
+            const fechaNacimiento = document.getElementById('fecha-nacimiento').value;
+            if (!fechaNacimiento) {
+                showError('errorFecha', 'Selecciona tu fecha de nacimiento', 'fecha-nacimiento');
+                isValid = false;
+            } else {
+                const edad = calculateAge(new Date(fechaNacimiento));
+                if (edad < 13) {
+                    showError('errorFecha', 'Debes tener al menos 13 años', 'fecha-nacimiento');
+                    isValid = false;
+                }
+            }
+            
+            // Validar país
+            const pais = document.getElementById('pais').value;
+            if (!pais) {
+                showError('errorPais', 'Selecciona tu país', 'pais');
+                isValid = false;
+            }
+            
+            // Validar términos
+            const terminos = document.getElementById('terminos').checked;
+            if (!terminos) {
+                showError('errorTerminos', 'Debes aceptar los términos y condiciones');
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+
+        function showError(elementId, message, inputId = null) {
+            document.getElementById(elementId).textContent = message;
+            if (inputId) {
+                document.getElementById(inputId).style.borderColor = '#FF0000';
+            }
+        }
+
+        function calculateAge(birthDate) {
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            
+            return age;
+        }
+
+        function showSuccessMessage() {
+            // Efecto visual de éxito
+            const boton = document.querySelector('.boton-form');
+            boton.textContent = 'REGISTRO EXITOSO!';
+            boton.style.backgroundColor = '#009900';
+            
+            // Simular redirección después de 2 segundos
+            setTimeout(() => {
+                // window.location.href = 'bienvenida.html';
+                alert('Redirigiendo a la página de inicio...');
+                boton.textContent = 'REGISTRARSE';
+                boton.style.backgroundColor = '';
+            }, 2000);
+        }
+
+        // Validación en tiempo real
+        document.getElementById('usuario').addEventListener('input', validateUsername);
+        document.getElementById('password').addEventListener('input', validatePassword);
+        document.getElementById('confirmar-password').addEventListener('input', validateConfirmPassword);
+
+        function validateUsername() {
+            const usuario = this.value.trim();
+            if (usuario.length > 0 && usuario.length < 6) {
+                showError('errorUsuario', 'Mínimo 6 caracteres', 'usuario');
+            } else if (!/^[a-zA-Z0-9_]*$/.test(usuario)) {
+                showError('errorUsuario', 'Solo letras, números y _', 'usuario');
+            } else {
+                clearError('errorUsuario', 'usuario');
+            }
+        }
+
+        function validatePassword() {
+            const password = this.value;
+            if (password.length > 0 && password.length < 8) {
+                showError('errorPassword', 'Mínimo 8 caracteres', 'password');
+            } else if (!/(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/.test(password)) {
+                showError('errorPassword', 'Requiere 1 mayúscula, 1 número y 1 especial', 'password');
+            } else {
+                clearError('errorPassword', 'password');
+            }
+        }
+
+        function validateConfirmPassword() {
+            const confirmPassword = this.value;
+            const password = document.getElementById('password').value;
+            if (confirmPassword !== password) {
+                showError('errorConfirmPassword', 'Las contraseñas no coinciden', 'confirmar-password');
+            } else {
+                clearError('errorConfirmPassword', 'confirmar-password');
+            }
+        }
+
+        function clearError(elementId, inputId = null) {
+            document.getElementById(elementId).textContent = '';
+            if (inputId) {
+                document.getElementById(inputId).style.borderColor = '#00FF00';
+            }
+        }
+    </script>
+</body>
+</html>
